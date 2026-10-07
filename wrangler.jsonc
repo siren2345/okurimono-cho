@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "okurimono-cho",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-10-01",
+  "assets": {"directory":"public","binding":"ASSETS","run_worker_first":true},
+  "workers_dev": true,
+  "kv_namespaces": [{"binding":"CATALOG","id":"00000000000000000000000000000000"}],
+  "routes": [{"pattern":"gift.jev.jp","custom_domain":true}],
+  "triggers": {"crons":["17 1,7,13,19 * * *"]},
+  "observability": {"enabled":true,"head_sampling_rate":0.1},
+  "vars": {"SITE_ORIGIN":"https://gift.jev.jp"}
+}
