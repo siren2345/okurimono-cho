@@ -4,7 +4,7 @@ const headers={'Content-Type':'text/html; charset=utf-8','X-Content-Type-Options
 export async function refresh(env){let failed=0;for(const c of collections){try{const data=await fetchCollection(c,env);await env.CATALOG.put('collection:'+c.id,JSON.stringify(data));}catch{failed++;console.error('catalog_refresh_failed',c.id);}await new Promise(r=>setTimeout(r,1500));}if(failed)throw new Error('catalog_refresh_failed_count_'+failed);}
 export default {
  async fetch(request,env){
- const u=new URL(request.url);const origin=env.SITE_ORIGIN||'https://gift.jev.jp';
+ const u=new URL(request.url);const origin=env.SITE_ORIGIN||'https://okurimono.jev.jp';
  if(!['GET','HEAD'].includes(request.method))return new Response('Method not allowed',{status:405,headers:{Allow:'GET, HEAD'}});
  if(['/style.css','/app.js','/favicon.svg'].includes(u.pathname))return env.ASSETS.fetch(request);
  if(u.pathname==='/robots.txt')return new Response('User-agent: *\nAllow: /\nSitemap: '+origin+'/sitemap.xml',{headers:{'Content-Type':'text/plain'}});

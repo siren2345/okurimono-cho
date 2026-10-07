@@ -2,7 +2,11 @@
 
 予算と気持ちから探す、日本語のギフトカタログ。楽天市場の実データ・アフィリエイトリンクを使い、6ジャンル最大180件の商品を紹介します。
 
-予定公開先: https://gift.jev.jp/
+公開先: https://okurimono.jev.jp/
+
+バックアップ: https://okurimono-cho.hogemu32.workers.dev/
+
+2026年10月7日公開。Cloudflare Workers・専用KV・3つのWorker secret・Cron設定済み。`gift.jev.jp` は既存サイトで使用中のため、専用サブドメインを採用。
 
 ## 特徴
 
